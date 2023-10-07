@@ -4,13 +4,17 @@ http://127.0.0.1:8001/
 Accept: application/json
 
 ###
+http://127.0.0.1:8001/admin_email
+Accept: application/json
+
+###
 
 POST http://127.0.0.1:8001/sum2nums
 Accept: application/json
 Content-Type: application/json
 
 {
-  "x1": 11, 
+  "x1": 1, 
   "x2": 22
 }
 ###
