@@ -2,5 +2,8 @@
 from random import randint
 
 def index():
-  res = { "status": randint(1, 10) }
+  res = { 
+    "status": "ok",
+    "data": randint(1, 100)
+  }
   return res
