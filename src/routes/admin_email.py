@@ -1,20 +1,11 @@
 from ..config.pg_conn import conn, q
-
-SQL = """
-  select 
-    value 
-  from
-    main
-  where
-    name = 'admin.email'
-  limit 1
-"""
+from ..config.sql     import Q__admin_email
 
 
 def admin_email():
   res = None
   try:
-    q.execute(SQL)
+    q.execute(Q__admin_email)
   except Exception as err:
     raise err
   else:

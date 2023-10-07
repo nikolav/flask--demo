@@ -16,4 +16,3 @@ def routes_init(app):
   @app.route("/admin_email")
   def admin_email():
     return route_adminEmail()
-
