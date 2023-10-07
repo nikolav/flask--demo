@@ -1,6 +1,9 @@
 from .index import index as route_index
 
-def setup(app):
+def routes_init(app):
+  
   @app.route("/")
   def home(*args):
     return route_index(*args)
+
+
