@@ -23,13 +23,13 @@ _.py
 .DS_Store
 .dynamodb/
 .eggs/
-.env*
-.env.backup
-.env.development.local
-.env.local
-.env.production.local
-.env.test.local
-.env*.local
+# .env*
+# .env.backup
+# .env.development.local
+# .env.local
+# .env.production.local
+# .env.test.local
+# .env*.local
 !.env.example
 .eslintcache
 .fuse_hidden*
