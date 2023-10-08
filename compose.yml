@@ -9,6 +9,8 @@ services:
     stop_signal: SIGINT
     ports:
       - 8000:8000
+    volumes:
+      - ./app:/app
     depends_on:
       - pg
       - api
@@ -21,6 +23,8 @@ services:
     stop_signal: SIGINT
     ports:
       - 8001:8000
+    volumes:
+      - ./api:/app
     depends_on:
       - pg
 
