@@ -15,7 +15,7 @@ VOLUME .:/home/app
 
 # expose $PORT; [default=5000]
 # ENV PORT 5000
-# EXPOSE $PORT
+EXPOSE 5000
 
 # run start
-CMD ["python", "api.py"]
+CMD ["python", "/home/app/api.py"]

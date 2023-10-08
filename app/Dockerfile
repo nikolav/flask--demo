@@ -15,7 +15,7 @@ VOLUME .:/home/app
 
 # expose $PORT; [default=8000]
 # ENV PORT 8000
-# EXPOSE $PORT
+EXPOSE 8000
 
 # run start
-CMD ["python", "app.py"]
+CMD ["python", "/home/app/app.py"]
