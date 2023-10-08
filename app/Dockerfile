@@ -1,21 +1,27 @@
-FROM python:3
-RUN apt update; apt-get update
+# syntax=docker/dockerfile:1.4
+FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
 
-# mount-path in contanier
-WORKDIR /home/app
+WORKDIR /app
 
-# install flask
-RUN pip install flask
+COPY requirements.txt /app
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip3 install -r requirements.txt
 
-# copy app
-COPY . .
+COPY . /app
 
-# bind volume
-VOLUME .:/home/app
+ENTRYPOINT ["python3"]
+CMD ["app.py"]
 
-# expose $PORT; [default=8000]
-# ENV PORT 8000
-EXPOSE 8000
+FROM builder as dev-envs
 
-# run start
-CMD ["python", "/home/app/app.py"]
+RUN <<EOF
+apk update
+apk add git
+EOF
+
+RUN <<EOF
+addgroup -S docker
+adduser -S --shell /bin/bash --ingroup docker vscode
+EOF
+# install Docker tools (cli, buildx, compose)
+COPY --from=gloursdocker/docker / /

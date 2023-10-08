@@ -1,4 +1,3 @@
-
 from flask import Flask, send_from_directory, send_file
 
 app = Flask(__name__)
@@ -12,4 +11,4 @@ def static_resource(path):
   return send_from_directory("static", path)
 
 if __name__ == "__main__":
-  app.run(port=8000)
+  app.run(host="0.0.0.0", port=8000)

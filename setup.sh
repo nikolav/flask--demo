@@ -25,12 +25,12 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-# allow ports
+# allow app @ports
 ufw allow http
 ufw allow OpenSSH
 ufw allow 5432
-ufw allow 8001
 ufw allow 8000
+ufw allow 8001
 ufw enable
 
 # shortcuts
@@ -38,7 +38,7 @@ alias ll='ls -AlFht --color=auto --group-directories-first '
 alias gs='git status '
 
 # status check
-echo '@status: '
+echo '@status'
 git --version
 docker --version
 docker-compose --version

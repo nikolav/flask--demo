@@ -1,24 +1,26 @@
-version: "3"
-
 services:
   app:
     container_name: app
-    build: ./app
+    build:
+      context: app
+      target: builder
+    # flask requires SIGINT to stop gracefully
+    # (default stop signal from Compose is SIGTERM)
+    stop_signal: SIGINT
     ports:
-      - 80:8000
-    volumes:
-      - ./app:/home/app
+      - 8000:8000
     depends_on:
-      - api
       - pg
+      - api
 
   api:
     container_name: api
-    build: ./api
+    build:
+      context: api
+      target: builder
+    stop_signal: SIGINT
     ports:
-      - 8001:5000
-    volumes:
-      - ./api:/home/app
+      - 8001:8000
     depends_on:
       - pg
 
