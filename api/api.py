@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-import psycopg2 as pg
-from src.config.vars import DB_URI
+from src.config.pg_conn import pg_connection
 
 
 app = Flask(__name__)
@@ -13,8 +12,7 @@ SQL = """
 
 @app.route("/")
 def home():
-  conn = pg.connect(DB_URI)
-  q = conn.cursor()
+  conn, q = pg_connection()
   q.execute(SQL)
   sum, = q.fetchone()
   res = { "status": "ok", "data": sum }
