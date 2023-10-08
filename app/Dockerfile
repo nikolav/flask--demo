@@ -13,8 +13,8 @@ COPY . .
 # bind volume
 VOLUME .:/home/app
 
-# expose $PORT; [default=5000]
-ENV PORT 5000
+# expose $PORT; [default=8000]
+ENV PORT 8000
 EXPOSE $PORT
 
 # run start

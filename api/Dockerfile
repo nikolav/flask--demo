@@ -4,8 +4,8 @@ RUN apt update; apt-get update
 # mount-path in contanier
 WORKDIR /home/app
 
-# install psycopg2, flask
-RUN pip install psycopg2 && pip install flask
+# install psycopg2, flask, flask-cors
+RUN pip install psycopg2; pip install flask; pip install -U flask-cors
 
 # copy app
 COPY . .
