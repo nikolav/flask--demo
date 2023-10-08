@@ -1,4 +1,5 @@
 import psycopg2 as pg
+from .vars import DB_URI
 
-conn = pg.connect("postgres://app:app@70.34.223.252:5544/app")
+conn = pg.connect(DB_URI)
 q = conn.cursor()
