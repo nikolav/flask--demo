@@ -1,4 +1,17 @@
 
-const a: number = 2;
+import "bootstrap";
+import $ from "jquery";
 
-console.log({ a });
+$(() => {
+  const win$ = $(window);
+  const nodes$ = $("body *");
+  console.log({ nodes$, win$ });
+
+  const btn$ = $("#b01");
+  btn$.on({
+    click: (evt) => {
+      console.log({ evt });
+    }
+  })
+
+});
