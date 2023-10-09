@@ -1,6 +1,6 @@
 
 from .pg_conn import pg_connection
-from .sql import Q_table_main, Q_table_docs, Q_table_tags, Q_main_upsert
+from .sql import Q_table_main, Q_table_docs, Q_table_tags, Q_main_upsert, Q_main_upsert_admin_email
 
 
 def cmd__db_config():
@@ -10,5 +10,6 @@ def cmd__db_config():
   q.execute(Q_table_docs)
   q.execute(Q_table_tags)
   q.execute(Q_main_upsert)
+  q.execute(Q_main_upsert_admin_email)
   conn.commit()
 

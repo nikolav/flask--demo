@@ -1,22 +1,12 @@
 from flask import Flask
 from flask_cors import CORS
-from src.config.pg_conn import pg_connection
+from src.routes.routes_init import routes_init
 
 
 app = Flask(__name__)
 CORS(app)
 
-SQL = """
-  select 1+2 as sum
-"""
-
-@app.route("/")
-def home():
-  conn, q = pg_connection()
-  q.execute(SQL)
-  sum, = q.fetchone()
-  res = { "status": "ok", "data": sum }
-  return res
+routes_init(app)
 
 
 if __name__ == "__main__":
