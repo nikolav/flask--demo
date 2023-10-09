@@ -1,0 +1,20 @@
+{
+	"name": "parcel-starter",
+	"version": "1.0.0",
+	"license": "MIT",
+	"browserslist": "> 0.5%, last 2 versions, not dead",
+	"source": "src/index.html",
+	"scripts": {
+		"dev": "parcel -p 3000",
+		"dev:open": "parcel -p 3000 --open",
+		"dev:lazy": "parcel -p 3000 --lazy",
+		"build:parcel": "parcel build",
+		"build": "npm run clean && npm run build:parcel",
+		"clean": "rm -rf dist/*"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@parcel/transformer-sass": "2.9.3",
+		"parcel": "^2.9.3"
+	}
+}

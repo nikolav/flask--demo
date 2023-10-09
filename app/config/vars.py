@@ -1,0 +1,2 @@
+
+DIR_STATIC = "dist"
