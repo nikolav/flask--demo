@@ -9,6 +9,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . /app
 
+# install node, yarn; build
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -; apt-get install -y nodejs; curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -; echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list; apt update; apt install yarn;
+RUN yarn; yarn build
+
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
 
