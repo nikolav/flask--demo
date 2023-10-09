@@ -5,12 +5,11 @@ WORKDIR /app
 
 COPY . /app
 
-# install node, yarn; build
+# install node, yarn
 RUN apk add --update nodejs npm; npm install --global yarn
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install -r requirements.txt
-
 
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
