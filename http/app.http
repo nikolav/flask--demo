@@ -1,11 +1,11 @@
 
 
 ###
-http://127.0.0.1:8000/
+http://45.77.142.195:8001/
 Accept: application/json
 
 ###
-POST http://127.0.0.1:8000/docs
+POST http://45.77.142.195:8001/docs
 Accept: application/json
 Content-Type: application/json
 
