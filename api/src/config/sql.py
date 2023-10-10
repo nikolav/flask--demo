@@ -25,6 +25,14 @@ Q_table_tags = """
   )
 """
 
+Q_table_ln_docs_tags = """
+create table if not exists ln_docs_tags (
+  id      bigserial  primary key,
+  doc_id  bigint     not null,
+  tag_id  bigint     not null
+)
+"""
+
 Q_main_upsert = """
   insert into dev__main
     (name, value)
@@ -55,3 +63,19 @@ Q__admin_email = """
   limit 1
 """
 
+Q__list_docs_by_tag = """
+  select 
+  d.*
+from 
+  dev__docs as d
+JOIN
+  ln_docs_tags as l
+on
+  l.doc_id = d.id
+JOIN
+  dev__tags as t
+on
+  l.tag_id = t.id
+where
+  t.tag = '{}'
+"""

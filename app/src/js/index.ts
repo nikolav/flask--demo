@@ -1,6 +1,6 @@
 
-import "bootstrap";
 import $ from "jquery";
+import "bootstrap";
 
 $(() => {
   const win$ = $(window);
