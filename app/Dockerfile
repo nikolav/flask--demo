@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install -r requirements.txt
 
 ENTRYPOINT ["python3"]
-CMD ["-m", "flask", "--app", "app", "run"]
+CMD ["app.py"]
 
 FROM builder as dev-envs
 
