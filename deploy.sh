@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# run/build containers
+# run containers
 docker compose up -d
 
 # build ui
