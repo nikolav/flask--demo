@@ -73,12 +73,12 @@ from
   dev__docs as d
     join
       ln_docs_tags as l
-    on
-      l.doc_id = d.id
+        on
+          l.doc_id = d.id
     join
       dev__tags as t
-    on
-      l.tag_id = t.id
+        on
+          l.tag_id = t.id
 where
   t.tag = '{}'
 """

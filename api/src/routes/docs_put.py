@@ -27,20 +27,21 @@ def docs_put():
     if None != id:
       Q = """
         select 
-          data 
+          d.data 
         from 
-          dev__docs as d
+          dev__docs d
             join
-              ln_docs_tags as l
+              ln_docs_tags l
                 on
                   l.doc_id = d.id
             join
-              dev__tags as t
+              dev__tags t
                 on
                   l.tag_id = t.id
         where
           t.tag = '{tag}'
-          and d.id = {id}
+          and 
+            d.id = {id}
       """.format(**{ "id": id, "tag": tag })
       q.execute(Q)
       conn.commit()
