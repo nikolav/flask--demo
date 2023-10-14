@@ -70,13 +70,13 @@ Q__list_docs_by_tag = """
 select 
   d.*
 from 
-  dev__docs as d
+  dev__docs d
     join
-      ln_docs_tags as l
+      ln_docs_tags l
         on
           l.doc_id = d.id
     join
-      dev__tags as t
+      dev__tags t
         on
           l.tag_id = t.id
 where
