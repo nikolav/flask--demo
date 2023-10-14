@@ -1,5 +1,5 @@
 
-from json import loads, dumps
+import json
 from flask import request
 
 from ..config.pg_conn import pg_connection
@@ -31,28 +31,16 @@ def docs_put():
           d.data 
         from 
           dev__docs d
-            join
-              ln_docs_tags l
-                on
-                  l.doc_id = d.id
-            join
-              dev__tags t
-                on
-                  l.tag_id = t.id
         where
-          t.tag = '{tag}'
-          and 
-            d.id = {id}
-      """.format(**{ "id": ID, "tag": tag })
+          d.id = {}
+      """.format(ID)
       q.execute(Q)
-      conn.commit()
       
       row = q.fetchone()
-      data_curr = loads(row[0]) if None != row else {}
+      data_curr = json.loads(row[0]) if None != row else {}
       
-      if None != data_curr:
-        data_curr.update(loads(data))
-        data = dumps(data_curr)
+      data_curr.update(json.loads(data))
+      data = json.dumps(data_curr)
 
       Q = """
         insert into 
@@ -76,7 +64,6 @@ def docs_put():
       """.format(data)
     
     q.execute(Q)
-    conn.commit()
     
     doc_id, = q.fetchone()
     res["id"] = doc_id

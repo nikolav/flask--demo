@@ -94,3 +94,30 @@ delete from ln_docs_tags
 where
   doc_id = {}
 """
+
+Q__find_doc_by_id = """
+  select 
+    *
+  from
+    dev__docs
+  where
+    id = '{}'
+"""
+
+Q__tags_by_doc_id = """
+  select 
+    t.tag tag
+  from
+    dev__tags t
+      join
+        ln_docs_tags l
+          on
+            l.tag_id = t.id
+      join
+        dev__docs d
+          on
+            l.doc_id =d.id
+  where
+    d.id = '{}'
+"""
+
