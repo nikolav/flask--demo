@@ -1,4 +1,5 @@
 
+import json
 
 from flask import request
 
@@ -8,7 +9,7 @@ from ..config.sql      import Q__list_docs_by_tag
 
 def docs_ls():
 
-  res = []
+  res = {}
 
   try:
 
@@ -20,10 +21,13 @@ def docs_ls():
     conn, q = pg_connection()
     
     q.execute(Q__list_docs_by_tag.format(tag))
-    res = q.fetchall()
 
+    for ID, data in q:
+      res[ID] = json.loads(data)
+    
   except:
     pass
+
   else:
     conn.commit()
 

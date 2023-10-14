@@ -32,6 +32,7 @@ def docs_find(ID):
     pass
   
   finally:
-    conn.commit()
+    if None != conn:
+      conn.commit()
 
   return res
