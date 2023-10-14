@@ -8,13 +8,37 @@
 		<link rel="stylesheet" href="./scss/styles.scss" />
 	</head>
 	<body>
-		<header>
-			<h1>Parcel Starter</h1>
-		</header>
-		<section>
-			<button id="b01" class="btn btn-primary">ok</button>
-			<button class="btn btn-secondary">ok</button>
-		</section>
+		<div class="container-fluid p-5 bg-primary text-white text-center">
+			<h1 class="display-1">First Page</h1>
+			<p>Resize this responsive page to see the effect!</p>
+		</div>
+		
+		<!-- @toolbar -->
+		<div class="mt-4 d-flex justify-content-center justify-content-sm-end container">
+			<div class="btn-group btn-sm">
+				<button id="B2" class="btn btn-secondary **text-uppercase">open</button>
+				<button id="B4" class="btn btn-secondary **text-uppercase">save</button>
+				<button id="B3" class="btn btn-secondary **text-uppercase">close</button>
+				<button id="B__ok" class="btn btn-primary **text-uppercase">ok</button>
+			</div>
+		</div>
+
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-sm-7">
+					<h3 class="display-3">Hello World</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+				</div>
+				<div class="col-sm">
+					<h3>Info:Admin</h3>
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+				</div>
+			</div>
+
+		</div>	
+		
 		<script type="module" src="./js/index.ts" defer></script>
 	</body>
 </html>

@@ -1,17 +1,21 @@
-
 import $ from "jquery";
 import "bootstrap";
+import axios from "axios";
+
 
 $(() => {
-  const win$ = $(window);
-  const nodes$ = $("body *");
-  console.log({ nodes$, win$ });
+  console.log(`@ready [${Date.now()}]`);
 
-  const btn$ = $("#b01");
+  const btn$ = $("#B__ok");
+
+
   btn$.on({
-    click: (evt) => {
-      console.log({ evt });
-    }
-  })
-
+    click: async (evt) => {
+      const { data } = await axios({
+        method: "get",
+        url: "https://jsonplaceholder.typicode.com/posts/22",
+      });
+      alert(JSON.stringify(data));
+    },
+  });
 });

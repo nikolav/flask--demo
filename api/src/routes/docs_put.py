@@ -11,20 +11,21 @@ def docs_put():
   
   params = request.get_json()
   
-  id = None
+  ID = None
   try:
-    id = int(params["id"]) if "id" in params else None
+    if "id" in params:
+      ID = int(params["id"])
   except:
     pass
   
-  data = params["data"] if "data" in params else None
+  data = params["data"] if "data" in params else "{}"
   tag  = params["tag"]  if "tag"  in params else None
 
   if None != tag:
 
     conn, q = pg_connection()
 
-    if None != id:
+    if None != ID:
       Q = """
         select 
           d.data 
@@ -42,12 +43,12 @@ def docs_put():
           t.tag = '{tag}'
           and 
             d.id = {id}
-      """.format(**{ "id": id, "tag": tag })
+      """.format(**{ "id": ID, "tag": tag })
       q.execute(Q)
       conn.commit()
       
       row = q.fetchone()
-      data_curr = loads(row[0]) if None != row else None
+      data_curr = loads(row[0]) if None != row else {}
       
       if None != data_curr:
         data_curr.update(loads(data))
@@ -62,7 +63,7 @@ def docs_put():
         do 
           update set data = '{1}'
         returning id
-      """.format(id, data)
+      """.format(ID, data)
 
     else:
       
