@@ -9,6 +9,8 @@
 // @import './04-globals/footer';
 // @import './04-globals/layout';
 
+@import './05-components/icons';
+
 
 @import "../../node_modules/bootstrap/scss/mixins/banner";
 @include bsBanner("");

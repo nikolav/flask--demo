@@ -6,12 +6,12 @@ Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/docs?tag=@1
+GET http://127.0.0.1:8000/docs?tag=app:config
 Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/docs/14
+GET http://127.0.0.1:8000/docs/23
 Accept: application/json
 
 ###
@@ -21,7 +21,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "id": 2
+  "id": 9
 }
 
 ###
@@ -31,9 +31,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "tag": "@1",
-  "data": "{\"D:2\": 22}",
-  "id": 14
+  "tag": "app:config",
+  "data": "{\"admin:email\": \"admin@nikolav.rs\"}"
 }
 
 ###
