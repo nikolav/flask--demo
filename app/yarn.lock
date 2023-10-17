@@ -885,6 +885,13 @@
   dependencies:
     "@popperjs/core" "^2.9.2"
 
+"@types/eventemitter3@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/eventemitter3/-/eventemitter3-2.0.2.tgz#94b57c2568c4f09479d64812f625317b12a6edd0"
+  integrity sha512-nLbSkHNDMVCyINVOtmDq9lTv+PDzeypazRMoqYDKyLPzrbLLiSHFSZLifMU1PxFHRvLJuyDlr/GU0j60eEyeaA==
+  dependencies:
+    eventemitter3 "*"
+
 "@types/jquery@^3.5.22":
   version "3.5.22"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.22.tgz#893273736f5695a520986c019c873b75b157f26a"
@@ -1218,6 +1225,11 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
+
+eventemitter3@*, eventemitter3@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
+  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
 
 fill-range@^7.0.1:
   version "7.0.1"

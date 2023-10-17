@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" data-bs-theme="**dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +13,10 @@
       <h1 class="display-1">First Page</h1>
       <p>Resize this responsive page to see the effect!</p>
       <div class="btn-group btn-group-sm">
-        <a href="/" class="btn btn-secondary icon-s icon--home-filled">home</a>
+        <a href="/" class="btn btn-secondary icon-start icon--home-filled">home</a>
         <a
           href="page2.html"
-          class="btn btn-secondary icon-s icon--folder-open-outline"
+          class="btn btn-secondary icon-start icon--folder-open-outline"
         >
           page2</a
         >
@@ -25,7 +25,7 @@
 
     <!-- @toolbar -->
     <div
-      class="mt-4 d-flex justify-content-center justify-content-sm-end container"
+      class="mt-4 d-flex justify-content-center justify-content-sm-end container-md"
     >
       <div class="btn-group **btn-group-sm">
         <div class="btn-group">
@@ -42,24 +42,53 @@
           </div>
         </div>
 
-        <button id="B4" class="btn btn-secondary **text-uppercase">save</button>
+        <button id="modal-1--open" class="btn btn-secondary **text-uppercase">open</button>
         <button id="B3" class="btn btn-secondary **text-uppercase">
           close
         </button>
-        <button id="B__ok" class="btn btn-primary **text-uppercase">ok</button>
+        <button id="B__ok" class="btn btn-primary **text-uppercase">
+          save
+        </button>
       </div>
     </div>
 
     <!-- @content -->
-    <div class="container mt-5">
+    <div class="container-md mt-5">
       <div class="row">
         <div class="col-sm-7">
           <h3 class="display-3">Hello World</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
+          
+          <div class="input-group mb-3">
+            <button type="button" class="btn btn-outline-secondary">Action</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+          </div>
+          
+          <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+            <button type="button" class="btn btn-outline-secondary">Action</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          
         </div>
         <div class="col-sm">
           <h3>Info:Admin</h3>
@@ -73,6 +102,35 @@
         </div>
       </div>
     </div>
+
+    <!-- @modals -->
+      <section class="modal fade" tabindex="-1" id="modal_1">
+        <div class="modal-dialog modal-fullscreen-md-down">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title">Modal title</h5>
+             <button type="button" class="btn-close modal-1--close" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <p>Modal body text goes here.</p>
+             <p>
+               <pre id="console">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                 incidunt, pariatur unde architecto itaque error quidem nemo
+                 obcaecati, nisi esse commodi ipsum repellat eos fugit numquam
+                 natus! Adipisci, earum culpa!
+               </pre>
+             </p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary modal-1--close">
+               Close
+             </button>
+             <button type="button" class="btn btn-primary">Save changes</button>
+           </div>
+         </div>
+       </div>
+     </section>
 
     <script type="module" src="./js/index.ts" defer></script>
   </body>

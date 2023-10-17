@@ -2,8 +2,7 @@
 from flask import request
 
 from ..config.pg_conn import pg_connection
-from ..config.sql     import Q__drop_doc_by_id
-from ..config.sql     import Q__drop_docs_tags_by_docid
+from ..config.sql     import Q__drop_doc_by_id, Q__drop_docs_tags_by_docid
 
 
 def docs_rm():

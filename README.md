@@ -1,5 +1,9 @@
 ## flask.app@docker
 
+@host
+   IS_PRODUCTION = True // @api/src/config/vars.py
+   IS_PRODUCTION = True // @app/src/config/vars.ts
+
 ```
 $ docker compose up -d
 [+] Building 1.1s (16/16) FINISHED
