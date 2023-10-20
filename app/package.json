@@ -8,12 +8,13 @@
 		"src/page2.html"
 	],
 	"scripts": {
-		"dev": "parcel -p 3003",
-		"dev:open": "parcel -p 3003 --open",
-		"dev:lazy": "parcel -p 3003 --lazy",
+		"dev": "parcel -p 3000",
+		"dev:open": "parcel -p 3000 --open",
+		"dev:lazy": "parcel -p 3000 --lazy",
 		"build:parcel": "parcel build",
 		"build": "npm run clean && npm run build:parcel",
-		"clean": "rm -rf dist/*"
+		"clean": "rm -rf dist/*",
+		"sass:build": "sass src/scss:dist "
 	},
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
@@ -31,8 +32,10 @@
 		"@types/bootstrap": "^5.2.7",
 		"@types/eventemitter3": "^2.0.2",
 		"@types/jquery": "^3.5.22",
+		"@types/lodash": "^4.14.200",
 		"@types/qs": "^6.9.8",
 		"buffer": "^5.5.0||^6.0.0",
-		"parcel": "^2.9.3"
+		"parcel": "^2.9.3",
+		"sass": "^1.69.4"
 	}
 }

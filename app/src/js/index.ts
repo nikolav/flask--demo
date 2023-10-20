@@ -38,9 +38,15 @@ const TOPIC = "@1";
   $(".modal-1--close").on({ click: () => ui.modal1.hide() });
 
   subscribe(({ type, payload }) => {
-    if ("data:read" !== type) return;
-    consolePre$.text(JSON.stringify(payload, null, 2));
-    ui.modal1.show();
+    switch (true) {
+      // #
+      case "@data:read" === type:
+        consolePre$.text(JSON.stringify(payload, null, 2));
+        ui.modal1.show();
+        break;
+      default:
+        break;
+    }
   });
 
   const btn$ = $("#B__ok");
@@ -53,7 +59,7 @@ const TOPIC = "@1";
       );
 
       publish({
-        type: "data:read",
+        type: "@data:read",
         payload,
       });
     },
