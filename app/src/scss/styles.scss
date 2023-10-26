@@ -1,42 +1,39 @@
-@import './01-config/functions';
-@import './01-config/variables';
-@import './01-config/mixins';
+@import "./01-config/functions";
+@import "./01-config/variables";
+@import "./01-config/mixins";
 
-@import './02-base/reset';
-@import './02-base/typography';
+@import "./02-base/reset";
+@import "./02-base/typography";
 
 // @import './04-globals/header';
 // @import './04-globals/footer';
 // @import './04-globals/layout';
+@import "./04-globals/custom";
 
-@import './05-components/icons';
-
+@import "./05-components/icons";
 
 @import "../../node_modules/bootstrap/scss/mixins/banner";
 @include bsBanner("");
 
-
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-// 
+//
 @import "../../node_modules/bootstrap/scss/functions";
 
-
 // 2. Include any default variable overrides here
-// 
+//
 // defaults@bootswatch
 @import "variables_bootswatch";
 
-
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
-// 
+//
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
-// 
+//
 
 // 5. Include remainder of required parts
-// 
+//
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/root";
@@ -79,10 +76,10 @@
 @import "../../node_modules/bootstrap/scss/helpers";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-// 
+//
 @import "../../node_modules/bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
 
 // 8. Add additional custom code here
-// 
+//
 @import "bootswatch";
