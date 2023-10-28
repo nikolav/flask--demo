@@ -38,7 +38,7 @@ alias ll='ls -AlFht --color=auto --group-directories-first '
 alias gs='git status '
 
 # status check
-echo '@status'
+echo '>> env.status: '
 git --version
 docker --version
 docker-compose --version
