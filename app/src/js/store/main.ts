@@ -2,22 +2,25 @@ import axios from "axios";
 // #https://vanilla-swr.js.org/#/?id=vanilla-swr
 import SWR from "vanilla-swr";
 import get from "lodash/get";
-import assign from "lodash/assign";
 import { idGen } from "nikolav-utils";
 
 export default {
   //
-  swr$: null,
-  watcher$: null,
+  swr$: {
+    main: {
+      client: null,
+      watcher: null,
+      data: null,
+    },
+  },
   //
   a: -1,
-  data: {},
 
   async init() {
-    const main$ = this;
-    const swr = SWR(
+    const store$ = this;
+    const swrMain = SWR(
       // key
-      "/api/data --read",
+      "/api/data/main --read",
       // fetcher
       async (key) =>
         get(await axios("http://127.0.0.1:8000/docs?tag=app:config:2"), "data"),
@@ -27,22 +30,24 @@ export default {
       }
     );
     //
-    main$.watcher$ = swr.watch(({ data, error }) => assign(main$.data, data));
-    main$.swr$ = swr;
+    store$.swr$.main.watcher = swrMain.watch(({ data }) => {
+      store$.swr$.main.data = data;
+    });
+    store$.swr$.main.client = swrMain;
   },
 
   logData() {
-    const data = this.data;
+    const data = this.swr$.main.data;
     console.clear();
     console.log({ data });
   },
 
   get sData() {
-    return JSON.stringify(this.data, null, 2);
+    return JSON.stringify(this.swr$.main.data, null, 2);
   },
 
   async updateData() {
-    const main$ = this;
+    const store$ = this;
     let res = null;
     try {
       res = await axios({
@@ -50,12 +55,14 @@ export default {
         url: "http://127.0.0.1:8000/docs",
         data: {
           tag: "app:config:2",
-          data: JSON.stringify({ "app:key": idGen() }),
-          id: 26,
+          data: JSON.stringify({
+            "app:password": idGen(),
+          }),
+          id: 5432,
         },
       });
     } finally {
-      if (get(res, "data.id")) main$.swr$.mutate();
+      if (get(res, "data.id")) store$.swr$.main.client.mutate();
     }
   },
 
