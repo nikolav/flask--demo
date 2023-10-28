@@ -9,7 +9,16 @@
   </head>
   <body>
     <div x-data="users">
-      <button class="btn btn-primary" @click="userAddRand">users:add</button>
+      <div class="btn-group btn-group-lg">
+        <button class="btn btn-primary" @click="userAddRand">users:add</button>
+        <button class="btn btn-secondary" @click="$store.main.logData()">
+          store:data
+        </button>
+        <button class="btn btn-secondary" @click="$store.main.updateData()">
+          store:data:update
+        </button>
+      </div>
+      <pre x-text="$store.main.sData"></pre>
       <template x-if="isNotEmpty">
         <ul class="list-group">
           <template x-for="user in ls" :key="user">

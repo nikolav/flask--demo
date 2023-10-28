@@ -6,7 +6,7 @@ Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/docs?tag=app:config
+GET http://127.0.0.1:8000/docs?tag=app:config:2
 Accept: application/json
 
 ###
@@ -21,7 +21,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "id": 9
+  "id": 27
 }
 
 ###
@@ -31,8 +31,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "tag": "app:config",
-  "data": "{\"admin:email\": \"admin@nikolav.rs\"}"
+  "tag": "app:config:2",
+  "data": "{\"app:key\": \"fXfI2\"}",
+  "id": 26
 }
 
 ###

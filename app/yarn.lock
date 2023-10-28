@@ -1886,6 +1886,11 @@ utility-types@^3.10.0:
   resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.10.0.tgz#ea4148f9a741015f05ed74fd615e1d20e6bed82b"
   integrity sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 
+vanilla-swr@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vanilla-swr/-/vanilla-swr-1.1.0.tgz#00b28a8100d854309ce1c0c7a3ce8ae41ca1b6cf"
+  integrity sha512-5X+nN9muNjFek0wbri4V7B1I87gRNkALwuDmN0Vt+o64KBR3DS7nJJnFD0w82exDj7ED1n8jx5tZ0bZFgs9LKA==
+
 weak-lru-cache@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/weak-lru-cache/-/weak-lru-cache-1.2.2.tgz#fdbb6741f36bae9540d12f480ce8254060dccd19"
