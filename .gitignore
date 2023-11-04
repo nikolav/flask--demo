@@ -178,7 +178,7 @@ dist
 dist-ssr
 dist/
 dmypy.json
-docs/
+#docs/
 downloads/
 eggs/
 ehthumbs_vista.db
@@ -247,3 +247,4 @@ api/storage/
 scp-config.sh
 mod.py
 app/mod.py
+docs/www/index.html

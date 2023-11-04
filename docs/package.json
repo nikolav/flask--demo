@@ -1,0 +1,13 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nikolav",
+  "license": "MIT",
+  "scripts": {
+    "docs:serve": "serve -p 8889 "
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

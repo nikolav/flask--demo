@@ -7,9 +7,9 @@
     "src/index.html"
   ],
   "scripts": {
-    "dev": "parcel -p 3000",
-    "dev:open": "parcel -p 3000 --open",
-    "dev:lazy": "parcel -p 3000 --lazy",
+    "dev": "parcel -p 3001",
+    "dev:open": "parcel -p 3001 --open",
+    "dev:lazy": "parcel -p 3001 --lazy",
     "start": "yarn build && serve ",
     "build:parcel": "parcel build",
     "build": "npm run clean && npm run build:parcel",
